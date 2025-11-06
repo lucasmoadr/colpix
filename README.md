@@ -11,10 +11,6 @@ Este documento explica cómo probar los endpoints disponibles.
 https://localhost:44397
 ```
 
-> Ajustar según tu configuración y `launchSettings.json`.
-
----
-
 ## 🔐 Autenticación
 
 ### 🧾 Registrar usuario
@@ -219,4 +215,5 @@ Luego probá los endpoints con **Swagger**, **Postman** o **cURL**.
 
 📘 **Swagger UI:**  
 [https://localhost:44397/swagger]
+
 
