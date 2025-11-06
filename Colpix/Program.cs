@@ -16,8 +16,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Bind JwtSettings from configuration (appsettings.json) or use defaults in JwtSettings class
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
 
-// Add EF Core In-Memory
-builder.Services.AddDbContext<AppDbContext>(options =>
+//// Add EF Core In-Memory
+//builder.Services.AddDbContext<AppDbContext>(options =>
+//    options.UseInMemoryDatabase("ColpixDb"));
+
+// Register DbContextFactory so services that require IDbContextFactory<AppDbContext> can be resolved
+builder.Services.AddDbContextFactory<AppDbContext>(options =>
     options.UseInMemoryDatabase("ColpixDb"));
 
 builder.Services.AddControllers();
@@ -114,7 +118,11 @@ using (var scope = app.Services.CreateScope())
                 new Employee { Name = "Empleado_6", Email = "Empleado_6@colpix.com", Supervisor_id = 3 },
                 new Employee { Name = "Empleado_7", Email = "Empleado_7@colpix.com", Supervisor_id = 3 },
                 new Employee { Name = "Empleado_8", Email = "Empleado_8@colpix.com", Supervisor_id = 3 },
-                new Employee { Name = "Empleado_9", Email = "Empleado_9@colpix.com", Supervisor_id = 3 });
+                new Employee { Name = "Empleado_9", Email = "Empleado_9@colpix.com", Supervisor_id = 3 },
+                new Employee { Name = "Empleado_10", Email = "Empleado_10@colpix.com", Supervisor_id = 8 },
+                new Employee { Name = "Empleado_11", Email = "Empleado_11@colpix.com", Supervisor_id = 8 },
+                new Employee { Name = "Empleado_12", Email = "Empleado_12@colpix.com", Supervisor_id = 7 },
+                new Employee { Name = "Empleado_13", Email = "Empleado_13@colpix.com", Supervisor_id = 9 });
     db.SaveChanges();
 }
 
