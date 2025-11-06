@@ -198,7 +198,7 @@ curl -X PUT "http://localhost:44397/Employee?idEmpleado=3" \
 - El controlador devuelve:
   - **Texto plano** en `POST`/`PUT`.
   - **JSON** en `GET`.
-- Asegurate de que la API **y la base de datos** estén corriendo antes de probar.
+- Asegurate de que la API este corriendo antes de probar.
 - Para detalles de validaciones, revisar las clases:
   - `Employee`
   - `EmployeeDetailsDto`
@@ -219,3 +219,4 @@ Luego probá los endpoints con **Swagger**, **Postman** o **cURL**.
 
 📘 **Swagger UI:**  
 [https://localhost:44397/swagger]
+
